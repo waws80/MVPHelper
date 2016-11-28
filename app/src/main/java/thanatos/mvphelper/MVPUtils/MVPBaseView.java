@@ -1,4 +1,4 @@
-package thanatos.mvphelper.MVPViewUtils;
+package thanatos.mvphelper.MVPUtils;
 
 /**
  * Created by Administrator on 2016/11/28.

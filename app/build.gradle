@@ -23,9 +23,12 @@ android {
             res.srcDirs =
                     [
                             'src/main/res/layouts/mvp_baselayout',
+                            'src/main/res/layouts/activity_layout',
+                            'src/main/res/layouts/adapter_layout',
                             'src/main/res/layouts',
                             'src/main/res'
                     ]
+            jniLibs.srcDirs = ['libs']
         }
     }
 
@@ -42,4 +45,7 @@ dependencies {
     compile 'com.android.support:design:25.0.0'
     compile 'com.jakewharton:butterknife:5.1.1'
     compile 'com.android.support:support-v4:25.0.0'
+    compile files('libs/Volley.jar')
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.squareup.picasso:picasso:2.3.2'
 }

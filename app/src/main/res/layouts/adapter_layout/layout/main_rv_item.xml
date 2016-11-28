@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="108.07dp">
+    <ImageView
+        android:id="@+id/findworkers_item_pic"
+        android:layout_marginLeft="3dp"
+        android:padding="1.45dp"
+        android:layout_width="105.07dp"
+        android:layout_height="105.07dp"/>
+    <TextView
+        android:id="@+id/findworkers_item_title"
+        android:textColor="@android:color/black"
+        android:textSize="12.68sp"
+        android:layout_toRightOf="@+id/findworkers_item_pic"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="13.77dp"
+        android:text="新买的马桶坏了！怎么办？新买的马桶坏了！怎么办？"
+        android:layout_width="wrap_content"
+        android:maxWidth="226.45dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/findworkers_item_context"
+        android:textSize="10.87sp"
+        android:layout_below="@+id/findworkers_item_title"
+        android:layout_toRightOf="@+id/findworkers_item_pic"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="13.77dp"
+        android:text="新买的马桶坏了！怎么办？"
+        android:layout_width="wrap_content"
+        android:maxWidth="211.96dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/findworkers_item_time"
+        android:textSize="10.87sp"
+        android:layout_toRightOf="@+id/findworkers_item_pic"
+        android:layout_marginLeft="13.77dp"
+        android:text="2天前"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="7.25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

@@ -3,8 +3,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
 <android.support.v4.widget.SwipeRefreshLayout
     android:layout_width="match_parent"
@@ -17,6 +16,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:visibility="gone"
             android:layout_gravity="center"
             android:gravity="center"
             android:id="@+id/mvp_network_error_layout"

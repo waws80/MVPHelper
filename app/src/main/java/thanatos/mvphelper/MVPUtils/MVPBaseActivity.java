@@ -1,16 +1,16 @@
-package thanatos.mvphelper.MVPViewUtils;
+package thanatos.mvphelper.MVPUtils;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -20,8 +20,9 @@ import thanatos.mvphelper.R;
  * MVPBaseActivity
  */
 
-public abstract class MVPBaseActivity<V,T extends MVPBasePresenter<V>> extends AppCompatActivity implements
-        SwipeRefreshLayout.OnRefreshListener {
+public abstract class MVPBaseActivity<V,T extends MVPBasePresenter<V>> extends AppCompatActivity  {
+
+    public static final String TAG="thanatos";
 
     @InjectView(R.id.floatingActionButton)
     FloatingActionButton floatingActionButton;
@@ -34,10 +35,13 @@ public abstract class MVPBaseActivity<V,T extends MVPBasePresenter<V>> extends A
     @InjectView(R.id.mvp_content_layout)
     FrameLayout mvpContentLayout;
     @InjectView(R.id.mvp_swipeRefreshLayout)
-    SwipeRefreshLayout mRefresh;
+    public SwipeRefreshLayout mRefresh;
+    @InjectView(R.id.toolbar)
+    public Toolbar toolbar;
+
     private MVPProgressBar mProgressBar;
 
-    private T mPresenter;
+    public T mPresenter;
 
 
     @Override
@@ -45,12 +49,14 @@ public abstract class MVPBaseActivity<V,T extends MVPBasePresenter<V>> extends A
         super.onCreate(savedInstanceState);
         setContentView(R.layout.object_mvp);
         ButterKnife.inject(this);
+        setSupportActionBar(toolbar);
+        mRefresh.setColorSchemeResources(R.color.colorAccent,R.color.colorPrimaryDark,R.color.colorProgress_mvp);
         mProgressBar=new MVPProgressBar(this);
         mPresenter=createPresenter();
         if (!mPresenter.isAttch()){
             mPresenter.attchView((V) this);
         }
-
+         //初始化
         init(mvpContentLayout,savedInstanceState);
 
     }
@@ -73,11 +79,6 @@ public abstract class MVPBaseActivity<V,T extends MVPBasePresenter<V>> extends A
         mRefresh=null;
     }
 
-    @Override
-    public void onRefresh() {
-
-    }
-
 
     public void showProgressBar(boolean isShow){
 
@@ -90,12 +91,14 @@ public abstract class MVPBaseActivity<V,T extends MVPBasePresenter<V>> extends A
         }
     }
 
-    public void showNetWorkError(boolean isShow){
+    public void netWorkError(boolean isShow){
         if (isShow){
-
+            mNetWorkErrorLayout.setVisibility(View.GONE);
         }else {
-
+            mNetWorkErrorLayout.setVisibility(View.VISIBLE);
         }
 
     }
+
+
 }

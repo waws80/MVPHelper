@@ -1,4 +1,4 @@
-package thanatos.mvphelper.MVPViewUtils;
+package thanatos.mvphelper.MVPUtils;
 
 import android.app.ProgressDialog;
 import android.content.Context;
