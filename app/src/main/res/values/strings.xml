@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MVPHelper</string>
+    <string name="content_mvp_network_error_text">网络异常，请重新获取！</string>
+</resources>
